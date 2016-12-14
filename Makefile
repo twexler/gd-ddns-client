@@ -3,9 +3,9 @@ get-deps: vendor
 vendor:
 	glide install
 
-test: get-deps coverage.out
+test: coverage.out
 
-coverage.out:
+coverage.out: get-deps
 	go test -coverprofile coverage.out
 
 coverage.html: test
