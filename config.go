@@ -9,7 +9,7 @@ import (
 
 var defaultDomainsURL = "https://domains.google.com"
 
-// Config an interface that all config types must implement
+// Config is an interface that all config types must implement
 type Config interface {
 	// GetDomainsURL should return the URL for Google Domains' api
 	GetDomainsURL() string
