@@ -51,6 +51,7 @@ func Test_Update_Fail_ConnectionFailure(t *testing.T) {
 func withMockDomainsAPI(t *testing.T, response []byte, fn func(DomainsAPI)) {
 	sm := http.NewServeMux()
 	sm.HandleFunc("/nic/update", func(w http.ResponseWriter, r *http.Request) {
+		require.NotEqual(t, "", r.FormValue("myip"))
 		w.WriteHeader(http.StatusOK)
 		w.Write(response)
 	})

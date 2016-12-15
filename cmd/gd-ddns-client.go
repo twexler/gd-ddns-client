@@ -18,6 +18,7 @@ var (
 
 func init() {
 	flag.StringVar(&configFile, "configFile", "/etc/gd-ddns-client.yaml", "spacify the config file to be used")
+	flag.Parse()
 	logger = zap.New(zap.NewTextEncoder())
 }
 

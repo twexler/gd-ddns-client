@@ -42,7 +42,7 @@ func NewDomainsAPI(baseURL string) DomainsAPI {
 func (a domainsAPI) Update(credential Credential, hostname string, ip net.IP, offline bool) error {
 	queryValues := make(url.Values, 3) // query values are hostname, ip and offline
 	queryValues.Add("hostname", hostname)
-	queryValues.Add("ip", ip.String())
+	queryValues.Add("myip", ip.String())
 	// offline can be "yes" or "no"
 	offlineValue := "no"
 	if offline {
