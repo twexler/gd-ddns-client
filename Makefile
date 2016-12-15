@@ -3,13 +3,13 @@ get-deps: vendor
 vendor:
 	glide install
 
-test: coverage.out
+test: overalls.coverprofile
 
-coverage.out: get-deps
-	go test -coverprofile coverage.out
+overalls.coverprofile: get-deps
+	overalls -project=github.com/twexler/gd-ddns-client
 
 coverage.html: test
-	go tool cover -html=coverage.out -o=coverage.html
+	go tool cover -html=overalls.coverprofile -o=coverage.html
 
 clean:
 	rm -rf vendor coverage.out coverage.html

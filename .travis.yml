@@ -4,9 +4,10 @@ install:
   - go get golang.org/x/tools/cover
   - go get github.com/mattn/goveralls
   - go get github.com/Masterminds/glide
+  - go get github.com/go-playground/overalls
 
 script:
-  - make coverage.out
-  - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken=$COVERALLS_TOKEN
+  - make overalls.coverprofile
+  - goveralls -coverprofile=overalls.coverprofile -service=travis-ci -repotoken=$COVERALLS_TOKEN
 
 secure: "GBa9Hzk7EUXUlUKQWHcCy27M4dljiIZoMa1fSb9c+qS90KgckZ7lES40iUnYZ1/SU5b2YgiQWGBFgYc01hxqpVCRRCTuVf2VdFdH5QmRDTFT/YfQab2uMVrk3FIIuMRT6zS4VQxq5uqA6m3hzP6a+LqymgpNToAo7FRfqVCVAHDR5Z8fr0OfBFVBSWDj3gGrGBRqAqG5Hns2JHZWHtJQZZVsIVihMVIufK3ToMu42/SJsmwO03y9vyknt3U8xAQ8ivYhlZyja0Sucw/5LeVoXOxcP8CtFTDbTfyQca7f5uI5DrBzOV/m0jYpdrlmfsxlNYRgDL4pmJilySHAxUUrBcBtN5JhkOAgI7kAa0q8kmhh0ePsW2ac4792pXeBwLUJySGLVa/jDCKoxquwWHwVLwA3uRSuLux2dE1Szr/M4bIruL2ExdZSCfjo9e4UQ0ibpof1DPp/uODk+znZIO9MAJ6ifQGZ9Ifx5u/u0CyUH63Ox7jZ0MnH/Q1yZ9xy9ayc6TtmTLb1oXaQCYuSKuOOTz3BsVPD3kshZF0ly87IodzCRFOqXtTWvqGFIgson8mhVYCKSv2qxm08vpkx4LK8Jnzs/8vzn/WR3pWPnK9abEEK20dAmaDZaclC+GfiY0SqFszspjIwgXuaebSd0EM1GJtQeYqcUw6/FKNI7q/Qa5w="
