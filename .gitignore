@@ -2,3 +2,4 @@ vendor/
 .#*
 *.coverprofile
 coverage.html
+gd-ddns-client
